@@ -10,9 +10,13 @@ namespace PaymentContext.Tests.Entities
     {
         
         [TestMethod]
-        public void TestMethod1()
+        public void AdicionarAssinatura()
         {
-            var student = new Student(new Name(),new Document("11111111111"), new Email("addres@mail.com"));
+            var name = new Name("Teste","Teste");
+            foreach (var item in name.Notifications)
+            {
+                // item.Message;
+            }
         }
     }
 }
