@@ -6,9 +6,8 @@ namespace PaymentContext.Domain.Entities
      public class BoletoPayment : Payment
     {
         public BoletoPayment(
-            string cardHolderName,
-            string cardNumber,
-            string lastTransactionNumber,
+            string barCode,
+            string boletoNumber,
             DateTime paidDate,
             DateTime expiredDate,
             decimal total,
@@ -16,9 +15,7 @@ namespace PaymentContext.Domain.Entities
             string payer,
             Document document,
             Address address,
-            Email email,
-            string barCode,
-            string boletoNumber
+            Email email
         ):base(
              paidDate,expiredDate,total,totalPaid,payer,document,address,email)
         {
