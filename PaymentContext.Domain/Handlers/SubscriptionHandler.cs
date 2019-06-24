@@ -1,6 +1,5 @@
 using System;
 using Flunt.Notifications;
-using Flunt.Validations;
 using PaymentContext.Domain.Commands;
 using PaymentContext.Domain.Entities;
 using PaymentContext.Domain.Enums;
@@ -74,6 +73,10 @@ namespace PaymentContext.Domain.Handlers
             //aplicar as validacoes
             AddNotifications(name, document,email, address,student, subscription,payment);
            
+            //checar as notificacoes
+            if (Invalid)
+              return new CommandResult(false,"Não foi possivel realizar a assinatura");
+
             //salvar as informacoes
             _repository.CreateSubscription(student);
        
@@ -132,6 +135,10 @@ namespace PaymentContext.Domain.Handlers
             //aplicar as validacoes
             AddNotifications(name, document,email, address,student, subscription,payment);
            
+            //checar as notificacoes
+            if (Invalid)
+              return new CommandResult(false,"Não foi possivel realizar a assinatura");
+
             //salvar as informacoes
             _repository.CreateSubscription(student);
        
